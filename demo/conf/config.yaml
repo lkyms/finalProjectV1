@@ -1,0 +1,14 @@
+message:  # 短信服务api
+  APIID: C99589856  
+  APIKEY: 92ef53eec3ff5e7fdc2fd5cf83d5a9ba
+mysql:  # mysql配置
+  user: root
+  pwd: root
+  address: "127.0.0.1:3306"
+  dbname: sql_test
+redis:  # redis 配置
+  address: "localhost:6379"
+  pwd: ""
+  db: 0
+jwtSecret: "1145141919810"  # JWT密钥
+port: :114  # 服务器运行端口
