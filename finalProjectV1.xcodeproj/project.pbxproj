@@ -8,25 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		ED2880B3274A19DE0050615F /* finalProjectV1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2880B2274A19DE0050615F /* finalProjectV1App.swift */; };
-		ED2880B5274A19DE0050615F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2880B4274A19DE0050615F /* ContentView.swift */; };
+		ED2880B5274A19DE0050615F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2880B4274A19DE0050615F /* LoginView.swift */; };
 		ED2880B7274A19DF0050615F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED2880B6274A19DF0050615F /* Assets.xcassets */; };
 		ED2880BA274A19DF0050615F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED2880B9274A19DF0050615F /* Preview Assets.xcassets */; };
 		ED2880C2274A1A0D0050615F /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2880C1274A1A0D0050615F /* LoginModel.swift */; };
 		ED2880C5274A1AEA0050615F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2880C4274A1AEA0050615F /* LoginViewModel.swift */; };
 		ED2880C8274A1E6A0050615F /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2880C7274A1E6A0050615F /* LoginService.swift */; };
-		ED2880CA274A22A40050615F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2880C9274A22A40050615F /* HomeView.swift */; };
+		ED2880CA274A22A40050615F /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2880C9274A22A40050615F /* RegisterView.swift */; };
+		ED3D2C27274B663700525631 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D2C26274B663700525631 /* HomeView.swift */; };
+		EDE226BA274C91FE00000402 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE226B9274C91FE00000402 /* RegisterModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ED2880AF274A19DE0050615F /* finalProjectV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = finalProjectV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2880B2274A19DE0050615F /* finalProjectV1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finalProjectV1App.swift; sourceTree = "<group>"; };
-		ED2880B4274A19DE0050615F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		ED2880B4274A19DE0050615F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		ED2880B6274A19DF0050615F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED2880B9274A19DF0050615F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ED2880C1274A1A0D0050615F /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		ED2880C4274A1AEA0050615F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		ED2880C7274A1E6A0050615F /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
-		ED2880C9274A22A40050615F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		ED2880C9274A22A40050615F /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		ED3D2C26274B663700525631 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EDE226B9274C91FE00000402 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		EDE226BB274C9E3E00000402 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,13 +64,13 @@
 		ED2880B1274A19DE0050615F /* finalProjectV1 */ = {
 			isa = PBXGroup;
 			children = (
+				EDE226BB274C9E3E00000402 /* Info.plist */,
+				ED3D2C25274B661B00525631 /* Views */,
 				ED2880C6274A1E5B0050615F /* Service */,
 				ED2880C3274A1AC00050615F /* ViewModel */,
 				ED2880C0274A19FA0050615F /* Model */,
 				ED2880B2274A19DE0050615F /* finalProjectV1App.swift */,
-				ED2880B4274A19DE0050615F /* ContentView.swift */,
 				ED2880B6274A19DF0050615F /* Assets.xcassets */,
-				ED2880C9274A22A40050615F /* HomeView.swift */,
 				ED2880B8274A19DF0050615F /* Preview Content */,
 			);
 			path = finalProjectV1;
@@ -83,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				ED2880C1274A1A0D0050615F /* LoginModel.swift */,
+				EDE226B9274C91FE00000402 /* RegisterModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -101,6 +107,16 @@
 				ED2880C7274A1E6A0050615F /* LoginService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		ED3D2C25274B661B00525631 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED2880C9274A22A40050615F /* RegisterView.swift */,
+				ED2880B4274A19DE0050615F /* LoginView.swift */,
+				ED3D2C26274B663700525631 /* HomeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,9 +190,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED2880C5274A1AEA0050615F /* LoginViewModel.swift in Sources */,
-				ED2880B5274A19DE0050615F /* ContentView.swift in Sources */,
+				ED2880B5274A19DE0050615F /* LoginView.swift in Sources */,
 				ED2880C8274A1E6A0050615F /* LoginService.swift in Sources */,
-				ED2880CA274A22A40050615F /* HomeView.swift in Sources */,
+				ED3D2C27274B663700525631 /* HomeView.swift in Sources */,
+				EDE226BA274C91FE00000402 /* RegisterModel.swift in Sources */,
+				ED2880CA274A22A40050615F /* RegisterView.swift in Sources */,
 				ED2880C2274A1A0D0050615F /* LoginModel.swift in Sources */,
 				ED2880B3274A19DE0050615F /* finalProjectV1App.swift in Sources */,
 			);
@@ -312,6 +330,8 @@
 				DEVELOPMENT_TEAM = DQFL5NX8A9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = finalProjectV1/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -322,6 +342,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lkyms.cd193p.finalProjectV1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -341,6 +362,8 @@
 				DEVELOPMENT_TEAM = DQFL5NX8A9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = finalProjectV1/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -351,6 +374,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lkyms.cd193p.finalProjectV1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

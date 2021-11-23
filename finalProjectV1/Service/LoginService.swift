@@ -8,15 +8,16 @@
 import Foundation
 
 protocol LoginService {
-    func checkUserNameAndPassword(_ name: String, _ pswd: String) -> Bool
+    func checkUserNameAndPassword(_ name: String, _ pswd: String) //-> Bool
 }
 
 struct LoginServiceImpl: LoginService {
     
     var model = CheckLogin()
     
-    func checkUserNameAndPassword(_ name: String, _ pswd: String) -> Bool {
-        model.checkUserNameAndPassword(name, pswd)
+    func checkUserNameAndPassword(_ name: String, _ pswd: String) {//-> Bool {
+        model.postDataLog()
+        //model.checkUserNameAndPassword(name, pswd)
     }
     
     
