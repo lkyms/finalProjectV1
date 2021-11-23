@@ -1,8 +1,8 @@
 //
-//  HomeView.swift
+//  RegisterView.swift
 //  finalProjectV1
 //
-//  Created by Lwj on 2021/11/21.
+//  Created by Lwj on 2021/11/22.
 //
 
 import SwiftUI

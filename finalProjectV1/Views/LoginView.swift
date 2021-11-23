@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LoginView: View {
     
     @State private var name = ""
     @State private var pswd = ""
@@ -38,11 +38,12 @@ struct ContentView: View {
                 
                 NavigationLink(destination: HomeView(),tag: 1,selection: $flag){
                     Button(action: {
-                        if viewModel.checkUserNameAndPassword(name, pswd) {
-                            self.flag = 1
-                        } else {
-                            self.authfailed = true
-                        }
+                        viewModel.checkUserNameAndPassword(name, pswd)
+//                        if viewModel.checkUserNameAndPassword(name, pswd) {
+//                            self.flag = 1
+//                        } else {
+//                            self.authfailed = true
+//                        }
                     }, label: {
                         LoginButtonContent()
                     })
@@ -55,9 +56,9 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LoginView()
     }
 }
 
@@ -72,7 +73,7 @@ struct LoginTextContent: View {
 
 struct UserImage: View {
     var body: some View {
-        Image("UserImage")
+        Image("LoginImage")
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(width: 150, height: 150)
