@@ -5,12 +5,13 @@ import (
 	"demo/model"
 	"demo/routers"
 	"fmt"
+	"log"
 )
 
 func initAll() {
 	// 模型更新
 	if err := dao.DB.AutoMigrate(&model.User{}); err != nil {
-		fmt.Printf("err:%v\n", err)
+		log.Printf("err:%v\n", err)
 		return
 	}
 }

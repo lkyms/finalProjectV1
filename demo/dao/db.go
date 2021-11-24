@@ -3,6 +3,7 @@ package dao
 import (
 	"demo/util"
 	"fmt"
+	"log"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -18,7 +19,7 @@ func InitDB() (err error) {
 		util.GetConfig("mysql.dbname"))
 	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
-		fmt.Printf("connect DB failed, err:%v\n", err)
+		log.Printf("connect DB failed, err:%v\n", err)
 		return
 	}
 

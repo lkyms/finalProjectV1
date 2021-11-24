@@ -4,14 +4,13 @@ import (
 	"demo/controller"
 	"demo/middleware"
 	"demo/util"
-	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
-func defaultFunc(c *gin.Context) {
-	c.String(http.StatusOK, "默认处理函数")
-}
+// func defaultFunc(c *gin.Context) {
+// 	c.String(http.StatusOK, "默认处理函数")
+// }
 func InitRouters() {
 	// gin.SetMode(gin.ReleaseMode) //发布版本，未设置默认为DEBUG
 	r := gin.Default()
@@ -21,6 +20,7 @@ func InitRouters() {
 		v1.POST("/register", controller.SignUp)
 		v1.POST("/register/sendMessage", controller.SignUpSendMessage)
 		v1.POST("/login", controller.SignIn)
+		v1.POST("/findpassword", controller.FindPassword)
 		v1.GET("/testAu", middleware.JWTAuth(), func(c *gin.Context) {
 			c.JSON(200, gin.H{
 				"Status":  200,
