@@ -1,20 +1,20 @@
 //
-//  RegisterView.swift
+//  ChangeInfoView.swift
 //  finalProjectV1
 //
-//  Created by Lwj on 2021/11/22.
+//  Created by Lwj on 2021/11/26.
 //
 
 import SwiftUI
 
-struct HomeView: View {
+struct ChangeInfoView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct ChangeInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        ChangeInfoView()
     }
 }

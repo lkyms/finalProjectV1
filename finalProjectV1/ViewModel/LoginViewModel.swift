@@ -8,7 +8,7 @@
 import Foundation
 
 protocol LoginViewModel{
-    func checkUserNameAndPassword(_ name: String, _ pswd: String) //-> Bool
+    func checkUserNameAndPassword(_ name: String, _ pswd: String) -> Bool
 }
 
 class LoginViewModelImpl: ObservableObject, LoginViewModel {
@@ -19,9 +19,9 @@ class LoginViewModelImpl: ObservableObject, LoginViewModel {
         self.service = service
     }
     
-    func checkUserNameAndPassword(_ name: String, _ pswd: String) {//-> Bool {
-        print(service.checkUserNameAndPassword(name, pswd))
-        return service.checkUserNameAndPassword(name, pswd)
+    func checkUserNameAndPassword(_ name: String, _ pswd: String) -> Bool {
+        
+        service.checkUserNameAndPassword(name, pswd)
     }
     
     

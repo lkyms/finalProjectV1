@@ -38,12 +38,12 @@ struct LoginView: View {
                 
                 NavigationLink(destination: HomeView(),tag: 1,selection: $flag){
                     Button(action: {
-                        viewModel.checkUserNameAndPassword(name, pswd)
-//                        if viewModel.checkUserNameAndPassword(name, pswd) {
-//                            self.flag = 1
-//                        } else {
-//                            self.authfailed = true
-//                        }
+//                        viewModel.checkUserNameAndPassword(name, pswd)
+                        if viewModel.checkUserNameAndPassword(name, pswd) {
+                            self.flag = 1
+                        } else {
+                            self.authfailed = true
+                        }
                     }, label: {
                         LoginButtonContent()
                     })

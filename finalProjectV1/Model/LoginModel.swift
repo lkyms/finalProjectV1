@@ -29,28 +29,63 @@ struct jsonPostFailed: Codable {
 //
 }
 
-struct CheckLogin {
+class CheckLogin {
     
-    func postDataLog() {
+//    func postDataLog() {
+//        guard let url = URL(string: "http://hutaowlp.xyz:114/api/login") else { return }
+//        let title: String = "123"
+//        let bar: String = "123"
+//        //let userId = 1
+//        let body: [String: Any] = ["Username": title, "Password": bar]
+//        let finalData = try! JSONSerialization.data(withJSONObject: body)
+//        var request = URLRequest(url: url)
+//        request.httpBody = finalData
+//        request.httpMethod = "POST"
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//
+//        URLSession.shared.dataTask(with: request) { (data, res, err) in
+//            do {
+//                if let data = data {
+//                    print(data)
+//                    print("--------------------")
+//                    let resultS = try JSONDecoder().decode(jsonPostSuccess.self, from: data)
+//
+//                    print(resultS)
+//
+//                } else {
+//                    print("No data")
+//                }
+//            } catch (let error) {
+//                print(error.localizedDescription)
+//            }
+//        }.resume()
+//    }
+    
+    
+    
+    func checkUserNameAndPassword(_ name: String, _ pswd: String, completion: @escaping (Int) -> Bool ) {
+        
         guard let url = URL(string: "http://hutaowlp.xyz:114/api/login") else { return }
-        let title: String = "123"
-        let bar: String = "123"
+        let title: String = name
+        let bar: String = pswd
         //let userId = 1
         let body: [String: Any] = ["Username": title, "Password": bar]
-        let finalData = try! JSONSerialization.data(withJSONObject: body)
+        let finalData = try! JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
         var request = URLRequest(url: url)
         request.httpBody = finalData
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        URLSession.shared.dataTask(with: url) { (data, res, err) in
+        URLSession.shared.dataTask(with: request) { data, res, err in
             do {
                 if let data = data {
                     print(data)
                     print("--------------------")
                     let resultS = try JSONDecoder().decode(jsonPostSuccess.self, from: data)
                     
-                    print(resultS)
+//                    DispatchQueue.main.async {
+                    completion(resultS.Status)
+//                    }
                     
                 } else {
                     print("No data")
@@ -59,17 +94,6 @@ struct CheckLogin {
                 print(error.localizedDescription)
             }
         }.resume()
-    }
-    
-    
-    
-    func checkUserNameAndPassword(_ name: String, _ pswd: String) -> Bool {
-        
-        if(name == "root" && pswd == "root") {
-            return true
-        } else {
-            return false
-        }
     }
     
 }

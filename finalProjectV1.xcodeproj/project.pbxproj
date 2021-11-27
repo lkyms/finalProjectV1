@@ -16,6 +16,13 @@
 		ED2880C8274A1E6A0050615F /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2880C7274A1E6A0050615F /* LoginService.swift */; };
 		ED2880CA274A22A40050615F /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2880C9274A22A40050615F /* RegisterView.swift */; };
 		ED3D2C27274B663700525631 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D2C26274B663700525631 /* HomeView.swift */; };
+		EDA654BB2750791E00985790 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA654BA2750791E00985790 /* MainPageView.swift */; };
+		EDA654BD2750793B00985790 /* MessageVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA654BC2750793B00985790 /* MessageVIew.swift */; };
+		EDA654BF2750794A00985790 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA654BE2750794A00985790 /* BoardView.swift */; };
+		EDA654C12750795500985790 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA654C02750795500985790 /* MeView.swift */; };
+		EDA654C32750807300985790 /* MyTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA654C22750807300985790 /* MyTabView.swift */; };
+		EDA654C52750829100985790 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA654C42750829100985790 /* SettingView.swift */; };
+		EDA654C82750842B00985790 /* ChangeInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA654C72750842B00985790 /* ChangeInfoView.swift */; };
 		EDE226BA274C91FE00000402 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE226B9274C91FE00000402 /* RegisterModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +37,13 @@
 		ED2880C7274A1E6A0050615F /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		ED2880C9274A22A40050615F /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		ED3D2C26274B663700525631 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EDA654BA2750791E00985790 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
+		EDA654BC2750793B00985790 /* MessageVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVIew.swift; sourceTree = "<group>"; };
+		EDA654BE2750794A00985790 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		EDA654C02750795500985790 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
+		EDA654C22750807300985790 /* MyTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabView.swift; sourceTree = "<group>"; };
+		EDA654C42750829100985790 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		EDA654C72750842B00985790 /* ChangeInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeInfoView.swift; sourceTree = "<group>"; };
 		EDE226B9274C91FE00000402 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		EDE226BB274C9E3E00000402 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +84,8 @@
 				ED2880C3274A1AC00050615F /* ViewModel */,
 				ED2880C0274A19FA0050615F /* Model */,
 				ED2880B2274A19DE0050615F /* finalProjectV1App.swift */,
+				ED3D2C26274B663700525631 /* HomeView.swift */,
+				EDA654C22750807300985790 /* MyTabView.swift */,
 				ED2880B6274A19DF0050615F /* Assets.xcassets */,
 				ED2880B8274A19DF0050615F /* Preview Content */,
 			);
@@ -112,11 +128,24 @@
 		ED3D2C25274B661B00525631 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EDA654C6275083FE00985790 /* SettingsView */,
 				ED2880C9274A22A40050615F /* RegisterView.swift */,
 				ED2880B4274A19DE0050615F /* LoginView.swift */,
-				ED3D2C26274B663700525631 /* HomeView.swift */,
+				EDA654BA2750791E00985790 /* MainPageView.swift */,
+				EDA654BC2750793B00985790 /* MessageVIew.swift */,
+				EDA654BE2750794A00985790 /* BoardView.swift */,
+				EDA654C02750795500985790 /* MeView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EDA654C6275083FE00985790 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				EDA654C42750829100985790 /* SettingView.swift */,
+				EDA654C72750842B00985790 /* ChangeInfoView.swift */,
+			);
+			path = SettingsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,14 +218,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDA654C12750795500985790 /* MeView.swift in Sources */,
+				EDA654BF2750794A00985790 /* BoardView.swift in Sources */,
 				ED2880C5274A1AEA0050615F /* LoginViewModel.swift in Sources */,
+				EDA654C52750829100985790 /* SettingView.swift in Sources */,
 				ED2880B5274A19DE0050615F /* LoginView.swift in Sources */,
+				EDA654BD2750793B00985790 /* MessageVIew.swift in Sources */,
 				ED2880C8274A1E6A0050615F /* LoginService.swift in Sources */,
 				ED3D2C27274B663700525631 /* HomeView.swift in Sources */,
+				EDA654C32750807300985790 /* MyTabView.swift in Sources */,
 				EDE226BA274C91FE00000402 /* RegisterModel.swift in Sources */,
 				ED2880CA274A22A40050615F /* RegisterView.swift in Sources */,
 				ED2880C2274A1A0D0050615F /* LoginModel.swift in Sources */,
+				EDA654C82750842B00985790 /* ChangeInfoView.swift in Sources */,
 				ED2880B3274A19DE0050615F /* finalProjectV1App.swift in Sources */,
+				EDA654BB2750791E00985790 /* MainPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
