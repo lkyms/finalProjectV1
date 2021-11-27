@@ -8,34 +8,25 @@
 import SwiftUI
 
 struct LoginView: View {
-    
     @State private var name = ""
     @State private var pswd = ""
     @State private var flag: Int? = nil
     @State private var authSuccess: Bool = false
     @State private var authfailed: Bool = false
-    
-    
     @StateObject var viewModel = LoginViewModelImpl(service: LoginServiceImpl())
-    
     var body: some View {
         NavigationView(content: {
             VStack{
-                
                 LoginTextContent()
-                
                 UserImage()
-                
                 UserNameTextField(name: $name)
                 PasswordSecureField(pswd: $pswd)
-                
                 if self.authfailed {
                     Text("failed !  please retry")
                         .font(.body)
                         .foregroundColor(.red)
                         .padding(.bottom, 20)
                 }
-                
                 NavigationLink(destination: HomeView(),tag: 1,selection: $flag){
                     Button(action: {
 //                        viewModel.checkUserNameAndPassword(name, pswd)
@@ -56,11 +47,13 @@ struct LoginView: View {
     }
 }
 
+
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
     }
 }
+
 
 struct LoginTextContent: View {
     var body: some View {
@@ -70,6 +63,7 @@ struct LoginTextContent: View {
             .font(.largeTitle)
     }
 }
+
 
 struct UserImage: View {
     var body: some View {
@@ -83,6 +77,7 @@ struct UserImage: View {
     }
 }
 
+
 struct UserNameTextField: View {
     @Binding var name: String
     var body: some View {
@@ -93,6 +88,7 @@ struct UserNameTextField: View {
     }
 }
 
+
 struct PasswordSecureField: View {
     @Binding var pswd: String
     var body: some View {
@@ -102,6 +98,7 @@ struct PasswordSecureField: View {
             .padding(.bottom, 20)
     }
 }
+
 
 struct LoginButtonContent: View {
     var body: some View {
@@ -114,6 +111,3 @@ struct LoginButtonContent: View {
             .cornerRadius(35)
     }
 }
-
-
-
