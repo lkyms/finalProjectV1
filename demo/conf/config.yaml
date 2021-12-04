@@ -12,3 +12,8 @@ redis:  # redis 配置
   db: 0
 jwtSecret: "1145141919810"  # JWT密钥
 port: :114  # 服务器运行端口
+qiniu: # 对象储存
+  accessKey: "QRnLMKJm2_2PoFeyCtE3vKDMGqT_sSk-HW_MC0AI"
+  secretKey: "3JblYJ7jE6BrCTKF7snr4u2z0ObHCwTnjg8zrEGw"
+  bucket: "ecust2021"
+  url: "http://r382rrass.hd-bkt.clouddn.com/"

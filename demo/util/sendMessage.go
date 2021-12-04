@@ -17,6 +17,11 @@ import (
 	"time"
 )
 
+var (
+	APIID  string = GetConfig("message.APIID")
+	APIKEY string = GetConfig("message.APIKEY")
+)
+
 func getMd5String(s string) string {
 	h := md5.New()
 	h.Write([]byte(s))
@@ -26,8 +31,8 @@ func Send(captcha, mobileNumber string) (data []byte) {
 	v := url.Values{}
 	_now := strconv.FormatInt(time.Now().Unix(), 10)
 	//fmt.Printf(_now)
-	_account := GetConfig("message.APIID")   //查看用户名 登录用户中心->验证码通知短信>产品总览->API接口信息->APIID
-	_password := GetConfig("message.APIKEY") //查看密码 登录用户中心->验证码通知短信>产品总览->API接口信息->APIKEY
+	_account := APIID   //查看用户名 登录用户中心->验证码通知短信>产品总览->API接口信息->APIID
+	_password := APIKEY //查看密码 登录用户中心->验证码通知短信>产品总览->API接口信息->APIKEY
 	_mobile := mobileNumber
 	_content := fmt.Sprintf("您的验证码是：%s。请不要把验证码泄露给其他人。", captcha)
 	v.Set("account", _account)

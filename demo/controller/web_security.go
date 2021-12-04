@@ -135,8 +135,8 @@ func SignIn(c *gin.Context) {
 	var s SignInInterface
 	if err := c.Bind(&s); err != nil {
 		c.JSON(200, gin.H{
-			"Status":  1,
-			"Message": err.Error(),
+			"status":  1,
+			"message": err.Error(),
 		})
 		return
 	}
@@ -155,8 +155,8 @@ func SignIn(c *gin.Context) {
 		if err2 != nil {
 			// 登录失败 密码不符
 			c.JSON(200, gin.H{
-				"Status":  1,
-				"Message": "密码错误",
+				"status":  1,
+				"message": "密码错误",
 			})
 			return
 		}
@@ -178,8 +178,8 @@ func SignIn(c *gin.Context) {
 			return
 		}
 		c.JSON(200, gin.H{
-			"Status":  0,
-			"Message": "密码正确",
+			"status":  0,
+			"message": "密码正确",
 			"token":   token,
 		})
 	}
@@ -221,8 +221,8 @@ func FindPassword(c *gin.Context) {
 	getUser, err := u.Get()
 	if err != nil {
 		c.JSON(200, gin.H{
-			"Status":  1,
-			"Message": "此手机号未注册或用户名不匹配",
+			"status":  1,
+			"message": "此手机号未注册或用户名不匹配",
 		})
 		return
 	} else {
@@ -238,7 +238,7 @@ func FindPassword(c *gin.Context) {
 			return
 		}
 		u.ID = getUser.ID
-		if err := u.Update(s.Password); err != nil {
+		if err := u.Update(model.User{Password: s.Password}); err != nil {
 			c.JSON(200, gin.H{
 				"status":  1,
 				"message": "更新密码失败",

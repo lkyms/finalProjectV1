@@ -21,12 +21,18 @@ func InitRouters() {
 		v1.POST("/register/sendMessage", controller.SignUpSendMessage)
 		v1.POST("/login", controller.SignIn)
 		v1.POST("/findpassword", controller.FindPassword)
+
 		v1.GET("/testAu", middleware.JWTAuth(), func(c *gin.Context) {
 			c.JSON(200, gin.H{
 				"Status":  200,
 				"Message": "test au ok!",
 			})
 		})
+		v2 := r.Group("api/profile")
+		{
+			v2.POST("/setAvatar", middleware.JWTAuth(), controller.SetAvatar)
+			v2.GET("/getAvatar", controller.GetAvatar)
+		}
 	}
 
 	port := util.GetConfig("port")

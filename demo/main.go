@@ -16,8 +16,7 @@ func initAll() {
 	}
 }
 func main() {
-	dao.InitDB()
 	initAll()
 	routers.InitRouters()
-	fmt.Println("helloWorld!!")
+	fmt.Println("helgo loWorld!!")
 }

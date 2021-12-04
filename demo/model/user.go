@@ -10,11 +10,12 @@ import (
 
 type User struct {
 	gorm.Model
-	Username string `gorm:"not null;unique"`
-	Password string `gorm:"not null"`
-	Phone    string `gorm:"not null;unique"`
-	Nickname string `gorm:"not null"`
-	Realname string `gorm:"not null"`
+	Username  string `gorm:"not null;unique"`
+	Password  string `gorm:"not null"`
+	Phone     string `gorm:"not null;unique"`
+	Nickname  string `gorm:"not null"`
+	Realname  string `gorm:"not null"`
+	AvatarUrl string
 }
 
 func (u *User) Create() (err error) {
@@ -37,13 +38,33 @@ func (u *User) Get() (getUser User, err error) {
 	}
 	return
 }
-func (u *User) Update(newPassword string) (err error) {
+
+// 已废弃
+func (u *User) UpdateOld(newPassword string) (err error) {
 	hash, err := bcrypt.GenerateFromPassword([]byte(newPassword), bcrypt.DefaultCost)
 	if err != nil {
 		log.Println(err)
 		return err
 	}
-	if err = dao.DB.Model(&u).Update("Password",string(hash)).Error; err != nil {
+	if err = dao.DB.Model(&u).Update("Password", string(hash)).Error; err != nil {
+		log.Printf("update err:%v\n", err)
+	}
+	return
+}
+func (u *User) Update(newUser User) (err error) {
+	if newUser.Password != "" { // 说明是来改密码的
+		newPassword := newUser.Password
+		hash, err := bcrypt.GenerateFromPassword([]byte(newPassword), bcrypt.DefaultCost)
+		if err != nil {
+			log.Println(err)
+			return err
+		}
+		if err = dao.DB.Model(&u).Update("Password", string(hash)).Error; err != nil {
+			log.Printf("update err:%v\n", err)
+			return err
+		}
+	}
+	if err = dao.DB.Model(&u).Updates(newUser).Error; err != nil {
 		log.Printf("update err:%v\n", err)
 	}
 	return
